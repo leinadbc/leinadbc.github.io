@@ -1,0 +1,487 @@
+/*
+    Estilos globales de la aplicación STATS
+    Desarrollado por José Manuel Ortiz Sánchez
+*/
+
+/* CSS: Globales */
+html,
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+table{
+    margin-bottom: 10px;
+}
+
+#datos-app{
+    float: left;
+    width: 92%;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    margin-left: 4%;
+    padding: 10px;
+}
+
+#datos-app-inicial{
+    text-align: center;
+    color: #666;
+    font-weight: bold;
+}
+
+#datos-app table{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+#datos-app th{
+    border: 1px solid #5cb85c;
+}
+
+#datos-app tr{
+    border-bottom: 0.5px solid #5cb85c;
+}
+
+#datos-app td{
+    border: 0.5px solid #5cb85c;
+}
+
+#datos-app table tr:hover{
+    background-color:#5cb85c;
+    color: white;
+    cursor: pointer;
+}
+
+#datos-app .border2{
+    border-left: 3px solid #5cb85c;
+}
+
+#datos-app .sombreado{
+    background-color: rgb(212, 211, 211);
+}
+
+.font-b{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.button{
+    float: left;
+    width: 45%;
+    margin: auto;
+    margin-left: 1%;
+    margin-bottom: 2%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #f3f3f3;
+    border: 1px solid rgb(169, 169, 169);
+    cursor: pointer;
+    user-select: none;
+}
+
+.button:hover{
+    background-color: #5cb85c;
+    color: white;
+}
+
+#delPlay{
+    width: 93%;
+}
+
+#deletePlay:hover, #delPlay:hover{
+    background-color: #dd1d1d;
+}
+
+.est-ind {
+    width: 95%;
+    float: left;
+    border: 1px solid rgb(169, 169, 169);
+    margin-left: 4%;
+    background-color: #5cb85c;
+    color: white;
+    user-select: none;
+}
+
+.por-ind {
+    width: 46%;
+    margin-left: 4%;
+}
+
+.est-neg{
+    float: left;
+    background-color: rgb(233, 157, 157);
+}
+
+.est-pos{
+    float: right;
+    background-color: rgb(157, 233, 182);
+}
+
+/* Fin de CSS: Globales */
+
+/* CSS Header */
+
+header{
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+/* Fin de CSS: Header */
+
+/* CSS Nabvar */
+
+nav {
+    float: left;
+    width: 98%;
+    margin: 1%;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+    display: inline-block;
+}
+  
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    height: 15px;
+}
+
+li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+li a.active {
+    color: white;
+    background-color: orange;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    /*float: left;*/
+    color: #666;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* Fin de CSS: Navbar */
+
+/* Formularios de revisión de estadísticas individuales */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    text-align: center;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-body input{
+    width: 50%;
+    text-align: center;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.modal-body select{
+    width: 50%;
+    height: 40px;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.plays-left {
+    float: left;
+    width: 50%;
+}
+
+.plays-right {
+    float: left;
+    width: 50%;
+}
+
+select#plays {
+    height: 100px;
+    border-radius: 0;
+    width: 100%;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.modal-body .button:hover{
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+/* ************************************************************ */
+/* ************************************************************ */
+/* ************************************************************ */
+/* Reglas para formularios */
+
+.form-add-player{
+    float: left;
+    width: 28%;
+    margin: 1%;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+.form-add-move{
+    float: left;
+    width: 61%;
+    margin: 1%;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+.ml-5{
+    margin-left: 5%;
+}
+
+.form-header{
+    text-align: center;
+    padding: 15px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.form-body{
+    padding: 2%;
+}
+
+.form-body input, select{
+    width: 95%;
+    text-align: center;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 2%;
+}
+
+.form-body .input{
+    width: 100%;
+}
+
+#buttonAddPlayer{
+    width: 88%;
+}
+
+#addPlayerRol{
+    cursor: pointer;
+    user-select: none;
+}
+
+#addPlayerRol:hover{
+    background-color: #5cb85c;
+    color: white;
+}
+
+#insertPlayNow{
+    width: 46%;
+    text-align: center;
+    height: 35px;
+    margin-left: 2%;
+    border-radius: 0;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.number-player, .move-player, .gesture-selected{
+    width:30px;
+    height:30px;
+    background-color:#5cb85c;
+    margin: 5px;
+    padding:10px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    font-size: 20x;
+    line-height:28px;
+    text-transform: uppercase;
+    float:left;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    color: white;
+    opacity: 0.5;
+}
+
+.gesture-selected{
+    font-size: 32px;
+}
+
+.err-rival{
+    font-size: 20px;
+}
+
+.number-player{
+    font-size: 22px;
+}
+
+.number-player:hover, .move-player:hover, .gesture-selected:hover{
+    opacity: 1;
+}
+
+
+/* ************************************************************ */
+/* ************************************************************ */
+/* ************************************************************ */
+/* Reglas para distintas resoluciones */
+
+@media only screen and (max-width: 1024px) {
+    .button{
+        width: 44%;
+    }
+
+    #datos-app{
+        background-color: white;
+        border-radius: 0;
+        border: 0;
+    }
+    #datos-app img{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .form-add-player, .form-add-move{
+        width: 92%;
+    }
+
+    .form-add-move{
+        margin-left: 5%;
+    }
+
+    #buttonAddPlay{
+        width: 93%;
+    }
+
+    #insertPlayNow{
+        display: none;
+    }
+
+    .modal-content{
+        width: 90%;
+    }
+
+    .button{
+        width: 42%;
+    }
+
+    #datos-app{
+        margin-left: 0%;
+        width: 100%;
+        background-color: white;
+        border-radius: 0;
+        border: 0;
+    }
+
+    table{
+        margin-left: 0%;
+    }
+
+    /* Hasta solucionar problema con impresión PDF en móviles */
+    #printPlay{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    #datos-app{
+        display: none;
+    }
+
+    li{
+        width: 100%;
+    }
+}
